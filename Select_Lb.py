@@ -4,7 +4,7 @@ import uproot as ut
 import numpy as np
 
 data = ut.open('/sps/lhcb/marin/RpK-fullr1r2/2017/data/LeptonU_MagDown.root')["tuple_mmLine;1"]['DecayTree;1']
-file = ut.recreate('/users/LHCb/polcherrafael/Data/Data_Bruit.root')
+file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_Lb.root')
 
 class particule :
     def __init__(self,name,PE,PX,PY,PZ) :
@@ -94,3 +94,7 @@ plt.title('q² filtré')
 plt.hist(q2_filtre,1000,color='r')
 plt.legend(['mu = '+str(round(np.mean(q2_filtre),3))+'\nsigma = '+str(round(np.std(q2_filtre)))],fontsize='15')
 plt.xlabel('Masse en MeV²/C⁴',fontsize='15')
+
+plt.savefig('blabla.png' )
+plt.close()
+    
