@@ -23,7 +23,7 @@ def allocation (name) :
 
 #Objet conntenant les valeurs réeles
 data = ut.open('/sps/lhcb/marin/RpK-fullr1r2/2017/data/LeptonU_MagDown.root')["tuple_mmLine;1"]['DecayTree;1']
-file = ut.recreate('Data_Bruit.root')
+file = ut.recreate('/users/LHCb/polcherrafael/Data/Data_Bruit.root')
 
 
 L1 = allocation("L1")
