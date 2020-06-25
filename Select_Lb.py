@@ -4,7 +4,7 @@ import uproot as ut
 import numpy as np
 
 data = ut.open('/sps/lhcb/marin/RpK-fullr1r2/2017/data/LeptonU_MagDown.root')["tuple_mmLine;1"]['DecayTree;1']
-file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_Lb.root')
+#file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_Lb.root')
 
 class particule :
     def __init__(self,name,PE,PX,PY,PZ) :
@@ -70,7 +70,7 @@ mask = mask_proche_masse_Lb & mask_masse_pK
 
 Lb_M_filtre = Lb_M[mask]
 Lambdastar_filtre = Lambdastar_M[mask]
-q2_filtre = q.masse**2[mask]
+q2_filtre = (q.masse**2)[mask]
 
 
 #Graphes
