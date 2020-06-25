@@ -21,15 +21,15 @@ def allocation (name) :
     return particule(name,PE,PX,PY,PZ)
 
 
-#Objet conntenant les valeurs réeles
+#Objet contenant les valeurs réeles
 data = ut.open('/sps/lhcb/marin/RpK-fullr1r2/2017/data/LeptonU_MagDown.root')["tuple_mmLine;1"]['DecayTree;1']
 file = ut.recreate('/users/LHCb/polcherrafael/Data/Data_Bruit.root')
 
 
+#Création de filtres "masks" pour sélectionner un beau bruit
 L1 = allocation("L1")
 L2 = allocation("L2")
 
-#Création de filtres "masks" pour sélectionner un beau bruit
 Lambdastar_M = data["Lambdastar_M"].array()
 Lb_M = data["Lb_M"].array()
 
