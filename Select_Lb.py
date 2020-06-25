@@ -87,7 +87,7 @@ plt.xlabel('Masse en MeV/C²',fontsize='15')
 plt.subplot(222)
 plt.title('Masse de Lambda* filtrée')
 plt.hist(Lb_M_filtre,1000, color='b')
-plt.legend(['mu = '+str(round(np.mean(Lb_M_filtre),3))+'\nsigma = '+str(round(np.std(Lb_M_filtre)))],fontsize='15')
+plt.legend(['mu = '+str(round(np.mean(Lambdastar_filtre),3))+'\nsigma = '+str(round(np.std(Lambdastar_filtre)))],fontsize='15')
 plt.xlabel('Masse en MeV/C²',fontsize='15')
 
 plt.subplot(223)
