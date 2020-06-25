@@ -96,6 +96,6 @@ plt.hist(q2_filtre,1000,color='r')
 plt.legend(['mu = '+str(round(np.mean(q2_filtre),3))+'\nsigma = '+str(round(np.std(q2_filtre)))],fontsize='15')
 plt.xlabel('Masse en MeV²/C⁴',fontsize='15')
 
-plt.savefig('blabla.png' )
+plt.savefig('/users/LHCb/polcherrafael/Data blabla.png' )
 plt.close()
     
