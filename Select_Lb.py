@@ -79,8 +79,8 @@ q2_filtre = (q.masse**2)[mask]
 plt.figure(figsize=(15,10))
 
 plt.subplot(221)
-plt.title('Masse de pKmumu filtrée')
-plt.hist(Lb_M_filtre,1000, color='gold', fontsize = '15')
+plt.title('Masse de pKmumu filtrée', fontsize = '15')
+plt.hist(Lb_M_filtre,1000, color='gold')
 plt.legend(['mu = '+str(round(np.mean(Lb_M_filtre),3))+'\nsigma = '+str(round(np.std(Lb_M_filtre)))],fontsize='12')
 plt.xlabel('Masse en MeV/C²',fontsize='15')
 
