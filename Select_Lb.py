@@ -2,6 +2,7 @@
 
 import uproot as ut
 import numpy as np
+from matplotlib import pyplot as plt
 
 data = ut.open('/sps/lhcb/marin/RpK-fullr1r2/2017/data/LeptonU_MagDown.root')["tuple_mmLine;1"]['DecayTree;1']
 #file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_Lb.root')
