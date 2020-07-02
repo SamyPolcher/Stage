@@ -6,7 +6,7 @@ import scipy.integrate as integrate
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-data = ut.open('/users/LHCb/polcherrafael/Data/Select_sig.root)["t"]
+data = ut.open('/users/LHCb/polcherrafael/Data/Select_sig.root')["t"]
 
 class particule :
     def __init__(self,name,PE,PX,PY,PZ) :
@@ -83,7 +83,7 @@ P_Pion = allocation('Proton')
 ##Kaon en Pion
 #K_Pion.PE = np.multiply(np.divide(P.masse, K.masse),K.PE)
 m_pion = 134.9766 #en MeV/c^2
-K_Pion.PE = np.sqrt(numpy.square(K.PX) + numpy.square(K.PY) + numpy.square(K.PZ) + m_pion)
+K_Pion.PE = np.sqrt(np.square(K.PX) + np.square(K.PY) + np.square(K.PZ) + m_pion)
 
 Lambdastar1 = K_Pion.sum(P,'Lstar')
 Lb1 = ( L1.sum(L2,'Dimuon') ).sum(Lambdastar1,'Lb')
@@ -109,7 +109,7 @@ plt.close()
 
 ##Proton en Pion
 m_pion = 134.9766 #en MeV/c^2
-P_Pion.PE = np.sqrt(numpy.square(P.PX) + numpy.square(P.PY) + numpy.square(P.PZ) + m_pion)
+P_Pion.PE = np.sqrt(np.square(P.PX) + np.square(P.PY) + np.square(P.PZ) + m_pion)
 
 Lambdastar2 = K.sum(P_Pion,'Lstar')
 Lb2 = ( L1.sum(L2,'Dimuon') ).sum(Lambdastar2,'Lb')
