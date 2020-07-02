@@ -66,14 +66,14 @@ def plot_output(y_train, y_test, y_prob_train, y_prob_test,
 
 if __name__ == '__main__':
     # read the data
-    sig = ut.open('/users/LHCb/polcherrafael/MC/MC_BKGCAT10.root')
-    bkg = ut.open('/users/LHCb/polcherrafael/Data/Data_Bruit.root')
+    sig = ut.open('/users/LHCb/polcherrafael/MC/MC_BKGCAT10.root')["t"]
+    bkg = ut.open('/users/LHCb/polcherrafael/Data/Data_Bruit.root')["t"]
 
     # define the variables we want to use
     vars = ["Lb_IPCHI2_OWNPV", "Lb_ENDVERTEX_CHI2", "Lambdastar_IPCHI2_OWNPV", "Lambdastar_ENDVERTEX_CHI2"]
     # create a pandas data frame with these variables only
-    sig_array = sig.pandas.df(vars, entrystart=0, entrystop=10000).to_numpy() # use only 1000 events for this example!
-    bkg_array = bkg.pandas.df(vars, entrystart=0, entrystop=10000).to_numpy() # use only 1000 events for this example!
+    sig_array = sig.pandas.df(vars).to_numpy() # use only 1000 events for this example!
+    bkg_array = bkg.pandas.df(vars).to_numpy() # use only 1000 events for this example!
     print("Signal shape:", sig_array.shape)
     print("Backgr shape:", bkg_array.shape)
 
