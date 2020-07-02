@@ -1,3 +1,4 @@
+
 import uproot as ut
 import numpy as np
 from matplotlib import pyplot as plt
@@ -5,12 +6,7 @@ import scipy.integrate as integrate
 from matplotlib.backends.backend_pdf import PdfPages
 
 
-data = ut.open('/sps/lhcb/marin/RpK-fullr1r2/2017/data/LeptonU_MagDown.root')["tuple_mmLine;1"]['DecayTree;1']
-
-#print(data.keys())
-print(len(data.keys()))
-#index = data['__index__'].array()
-#print(index)
+data = ut.open('/users/LHCb/polcherrafael/Data/Select_sig.root)["t"]
 
 class particule :
     def __init__(self,name,PE,PX,PY,PZ) :
