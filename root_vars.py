@@ -1,29 +1,9 @@
-# Script pour seletioner le bruit
 import uproot as ut
 import numpy as np
 
-class particule :
-    def __init__(self,name,PE,PX,PY,PZ) :
-        self.PE = PE
-        self.PX = PX
-        self.PY = PY
-        self.PZ = PZ
-        self.name = name
-        self.masse = np.sqrt(self.PE ** 2 - self.PX ** 2 - self.PY ** 2 - self.PZ ** 2)
-
-    def sum(self,a,name):
-        somme = particule(name , self.PE + a.PE , self.PX + a.PX , self.PY + a.PY , self.PZ + a.PZ )
-        return somme
-
-
-def allocation (name) :
-    PE, PX, PY, PZ = data[name+'_PE'].array(), data[name+'_PX'].array(), data[name+'_PY'].array(), data[name+'_PZ'].array()
-    return particule(name,PE,PX,PY,PZ)
-
-
 #Objet contenant les valeurs réeles
-data = ut.open(/users/LHCb/polcherrafael/Data/Data_Bruit.root)['t']
-file = ut.recreate('/users/LHCb/polcherrafael/Data/Data_Bruit_vars.root')
+data = ut.open('/users/LHCb/polcherrafael/MC/MC_BKGCAT10.root')['t']
+file = ut.recreate('/users/LHCb/polcherrafael/MC/MC_BKGCAT10_vars.root')
 
 #data = ut.open(/users/LHCb/polcherrafael/Data/Data_Bruit.root)['t']
 #file = ut.recreate('/users/LHCb/polcherrafael/Data/Data_Signal_vars.root')
@@ -48,7 +28,7 @@ Proton_P = data['Proton_P'].array()
 Kaon_P = data['Kaon_P'].array()
 
 L1_PT = data['L1_PT'].array()
-L2_PT = fdata['L2_PT'].array()
+L2_PT = data['L2_PT'].array()
 Proton_PT = data['Proton_PT'].array()
 Kaon_PT = data['Kaon_PT'].array()
 Lambdastar_PT = data['Lambdastar_PT'].array()
@@ -62,7 +42,7 @@ L2_IPCHI2_OWNPV= data['L2_IPCHI2_OWNPV'].array()
 Proton_ETA= data['Proton_ETA'].array()
 Kaon_ETA= data['Kaon_ETA'].array()
 
-#= file[''].array()
+
 
 dico_newtree["beta"] = np.float64
 dico_extend["beta"] = np.divide( Jpsi_P - Proton_P - Kaon_P ,  Jpsi_P + Proton_P + Kaon_P )
