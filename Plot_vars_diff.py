@@ -9,7 +9,19 @@ Bruit = ut.open('/users/LHCb/polcherrafael/Data/Data_Bruit.root')["t"]
 Signal = ut.open('/users/LHCb/polcherrafael/MC/MC_BKGCAT10.root')["t"]
 #data = ut.open('/users/LHCb/polcherrafael/Data/Select_sig.root')["t"]
 
-list_vars = ["Log_Lb_PT", "Log_Lb_IPCHI2_OWNPV", 'Log_Lb_DIRA_OWNPV', #"Lb_DIRAOWNPV", 
+minHadron_IPCHI2 = np.minimum(Proton_IPCHI2_OWNPV,Kaon_IPCHI2_OWNPV)
+minHadron_PT = 
+sumHadron_PT = np.sum(Proton_PT,Kaonn_PT
+sumHadron_IPCHI2 = Proton_IPCHI2_OWNPV + Kaon_IPCHI2_OWNPV
+minLepton_PT = 
+maxLepton_IPCHI2 = 
+minLepton_IPCHI2 = 
+sumLJ_PT = Lambdastar_PT + Jpsi_PT
+Hsum_ETA = Proton_ETA + Kaon_ETA
+
+
+
+list_vars = ["Log_Lb_PT", "Log_Lb_IPCHI2_OWNPV", 'Log_Lb_DIRA_OWNPV', "Lb_DIRA_OWNPV", 
 "Log_Lb_FDCHI2_OWNPV", "Log_Lb_LOKI_DTF_CHI2NDOF",
 "Log_Lb_ENDVERTEX_CHI2", "Log_Jpsi_FDCHI2_OWNPV", "Log_Lambdastar_PT", "Log_Lambdastar_IPCHI2_OWNPV",
 "Log_Lambdastar_ENDVERTEX_CHI2", 
