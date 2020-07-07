@@ -14,11 +14,10 @@ minHadron_PT = np.minimum(Proton_PT,Kaon_PT)
 sumHadron_PT = np.sum(Proton_PT,Kaon_PT)
 sumHadron_IPCHI2 = np.sum(Proton_IPCHI2_OWNPV,Kaon_IPCHI2_OWNPV)
 minLepton_PT = np.min(L1_PT,L2_PT)
-maxLepton_IPCHI2 = np.max(L1_IPCHI2_OWNPV, L2_IPCHI2_OWNPV)
-minLepton_IPCHI2 = np.min(L1_IPCHI2_OWNPV, L2_IPCHI2_OWNPV)
+maxLepton_IPCHI2 = np.max(L1_IPCHI2_OWNPV,L2_IPCHI2_OWNPV)
+minLepton_IPCHI2 = np.min(L1_IPCHI2_OWNPV,L2_IPCHI2_OWNPV)
 sumLJ_PT = np.sum(Lambdastar_PT,Jpsi_PT)
 Hsum_ETA = np.sum(Proton_ETA,Kaon_ETA)
-
 
 list_vars = ["Log_Lb_PT", "Log_Lb_IPCHI2_OWNPV", 'Log_Lb_DIRA_OWNPV', "Lb_DIRA_OWNPV", 
 "Log_Lb_FDCHI2_OWNPV", "Log_Lb_LOKI_DTF_CHI2NDOF", "Log_Lb_ENDVERTEX_CHI2", 
