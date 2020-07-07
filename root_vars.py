@@ -43,24 +43,24 @@ for i in data.keys():
     print(k)
     k = k+1
 
-Jpsi_P = file['Jpsi_P'].array()
-Proton_P = file['Proton_P'].array()
-Kaon_P = file['Kaon_P'].array()
+Jpsi_P = data['Jpsi_P'].array()
+Proton_P = data['Proton_P'].array()
+Kaon_P = data['Kaon_P'].array()
 
-L1_PT = file['L1_PT'].array()
-L2_PT = file['L2_PT'].array()
-Proton_PT = file['Proton_PT'].array()
-Kaon_PT = file['Kaon_PT'].array()
-Lambdastar_PT = file['Lambdastar_PT'].array()
-Jpsi_PT = file['Jpsi_PT'].array()
+L1_PT = data['L1_PT'].array()
+L2_PT = fdata['L2_PT'].array()
+Proton_PT = data['Proton_PT'].array()
+Kaon_PT = data['Kaon_PT'].array()
+Lambdastar_PT = data['Lambdastar_PT'].array()
+Jpsi_PT = data['Jpsi_PT'].array()
 
-Proton_IPCHI2_OWNPV= file['Proton_IPCHI2_OWNPV'].array()
-Kaon_IPCHI2_OWNPV= file['Kaon_IPCHI2_OWNPV'].array()
-L1_IPCHI2_OWNPV = file['L1_IPCHI2_OWNPV'].array()
-L2_IPCHI2_OWNPV= file['L2_IPCHI2_OWNPV'].array()
+Proton_IPCHI2_OWNPV= data['Proton_IPCHI2_OWNPV'].array()
+Kaon_IPCHI2_OWNPV= data['Kaon_IPCHI2_OWNPV'].array()
+L1_IPCHI2_OWNPV = data['L1_IPCHI2_OWNPV'].array()
+L2_IPCHI2_OWNPV= data['L2_IPCHI2_OWNPV'].array()
 
-Proton_ETA= file['Proton_ETA'].array()
-Kaon_ETA= file['Kaon_ETA'].array()
+Proton_ETA= data['Proton_ETA'].array()
+Kaon_ETA= data['Kaon_ETA'].array()
 
 #= file[''].array()
 
@@ -80,13 +80,13 @@ dico_newtree["sumHadron_IPCHI2"] = np.float64
 dico_extend["sumHadron_IPCHI2"] = Proton_IPCHI2_OWNPV + Kaon_IPCHI2_OWNPV
 
 dico_newtree["minLepton_PT"] = np.float64
-dico_extend["minLepton_PT"] =np.min(L1_PT,L2_PT)
+dico_extend["minLepton_PT"] =np.minimum(L1_PT,L2_PT)
 
 dico_newtree["maxLepton_IPCHI2"] = np.float64
-dico_extend["maxLepton_IPCHI2"] = np.max(L1_IPCHI2_OWNPV,L2_IPCHI2_OWNPV)
+dico_extend["maxLepton_IPCHI2"] = np.maximum(L1_IPCHI2_OWNPV,L2_IPCHI2_OWNPV)
 
 dico_newtree["minLepton_IPCHI2"] = np.float64
-dico_extend["minLepton_IPCHI2"] = np.min(L1_IPCHI2_OWNPV,L2_IPCHI2_OWNPV)
+dico_extend["minLepton_IPCHI2"] = np.minimum(L1_IPCHI2_OWNPV,L2_IPCHI2_OWNPV)
 
 dico_newtree["sumLJ_PT"] = np.float64
 dico_extend["sumLJ_PT"] = Lambdastar_PT + Jpsi_PT
