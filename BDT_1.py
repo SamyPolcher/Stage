@@ -137,3 +137,14 @@ if __name__ == '__main__':
     print("## Performance: ROC area")
     print("- train: {}".format(roc_auc))
     print("- test : {}".format(roc_auc_test))
+    
+    #plot fpr and tpr
+    plt.figure()
+    plt.title('fpr', fontsize = 15)
+    plt.plot(tpr, fpr, label = 'train', color = 'blue', alpha  = 0.5)
+    plt.plot(tpr_test, fpr_test, label = 'test', color = 'red', alpha =0.5)
+    plt.legend()
+    plt.xlabel('True positive rate')
+    plt.ylabel('False positive rate')
+    plt.savefig('fpr_tpr_MS_vars.png')
+    plt.close()
