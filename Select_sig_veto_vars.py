@@ -27,7 +27,9 @@ def allocation (name) :
 
 #Filtre sur Lambdastar
 Lambdastar_M = data["Lambdastar_M"].array()
-mask =  (1470 < Lambdastar_M) & (Lambdastar_M < 1570) 
+mask1 = (Lambdastar_M > 1470)  
+mask2 = (Lambdastar_M < 1570)
+mask = mask1 & mask
 
 #création du fichier root
 dico_newtree = {}
