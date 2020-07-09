@@ -1,35 +1,13 @@
-
 import uproot as ut
 import numpy as np
 from matplotlib import pyplot as plt
 
-data = ut.open('/users/LHCb/polcherrafael/Data/Select_sig_veto.root')["t"]
-file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_sig_veto_vars.root')
-
-class particule :
-    def __init__(self,name,PE,PX,PY,PZ) :
-        self.PE = PE
-        self.PX = PX
-        self.PY = PY
-        self.PZ = PZ
-        self.name = name
-        self.masse = np.sqrt(self.PE ** 2 - self.PX ** 2 - self.PY ** 2 - self.PZ ** 2)
-
-    def sum(self,a,name):
-        somme = particule(name , self.PE + a.PE , self.PX + a.PX , self.PY + a.PY , self.PZ + a.PZ )
-        return somme
-
-
-def allocation (name) :
-    PE, PX, PY, PZ = data[name+'_PE'].array(), data[name+'_PX'].array(), data[name+'_PY'].array(), data[name+'_PZ'].array()
-    return particule(name,PE,PX,PY,PZ)
-
+data = ut.open('/users/LHCb/polcherrafael/Data/Select_sig_veto_vars.root')["t"]
+file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_sig_veto_Lb_vars.root')
 
 #Filtre sur Lambdastar
 Lambdastar_M = data["Lambdastar_M"].array()
-mask1 = (Lambdastar_M > 1470)  
-mask2 = (Lambdastar_M < 1570)
-mask = mask1 & mask
+mask = (Lambdastar_M > 1470) & (Lambdastar_M < 1570)
 
 #création du fichier root
 dico_newtree = {}
