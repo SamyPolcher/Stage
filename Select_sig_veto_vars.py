@@ -3,7 +3,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 data = ut.open('/users/LHCb/polcherrafael/Data/Select_sig_veto_vars.root')["t"]
-file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_sig_veto_Lb_vars.root')
+file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_sig_veto_Lbstar_vars.root')
 
 #Filtre sur Lambdastar
 Lambdastar_M = data["Lambdastar_M"].array()
