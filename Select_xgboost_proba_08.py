@@ -59,7 +59,7 @@ y_prob_data = model.predict_proba(data_array)
 #y_prob_data_transpose = np.transpose(y_prob_data)
 mask = (y_prob_data[:,1] > 0.8)  #Je ferais ca plutot comme ca et il mesempbe que c'est la deuxieme collone le signal
 
-#création du fichier root
+#creation du fichier root
 dico_newtree = {}
 dico_extend = {}
 k = 0
