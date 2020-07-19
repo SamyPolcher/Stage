@@ -55,7 +55,7 @@ y_prob_train = model.predict_proba(X_train)
 y_prob_test  = model.predict_proba(X_test)
 y_prob_data = model.predict_proba(data_array)
 
-#création du mask
+#creation du mask
 #y_prob_data_transpose = np.transpose(y_prob_data)
 mask = (y_prob_data[:,1] > 0.8)  #Je ferais ca plutot comme ca et il mesempbe que c'est la deuxieme collone le signal
 
