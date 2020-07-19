@@ -7,13 +7,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_curve, auc
 from matplotlib import pyplot as plt
 
-sig = ut.open('/users/LHCb/polcherrafael/MC/MC_BKGCAT10_rare_vars.root'')["t"]
+sig = ut.open('/users/LHCb/polcherrafael/MC/MC_BKGCAT10_rare_vars.root')["t"]
 bkg = ut.open('/users/LHCb/polcherrafael/Data/Data_Bruit_vars.root')["t"]
 data = ut.open('/users/LHCb/polcherrafael/Data/Select_rare_Filtre.root')["t"]
 
 file = ut.recreate('/users/LHCb/polcherrafael/Data/Select_rare_Filtre.root')
 
-vars = ["beta", "Lb_PT", "Lb_IPCHI2_OWNPV", 'Lb_DIRA_OWNPV', "Lb_DIRA_OWNPV", 
+vars = ["beta", "Lb_PT", "Lb_IPCHI2_OWNPV", "Lb_DIRA_OWNPV", "Lb_DIRA_OWNPV", 
 "Lb_FDCHI2_OWNPV", "Lb_LOKI_DTF_CHI2NDOF", "Lb_ENDVERTEX_CHI2", 
 "Jpsi_FDCHI2_OWNPV", "Lambdastar_PT", "Lambdastar_IPCHI2_OWNPV", "Lambdastar_ENDVERTEX_CHI2", 
 "minHadron_PT", "minHadron_IPCHI2", "sumHadron_PT","sumHadron_IPCHI2", "minLepton_PT", "maxLepton_IPCHI2", "minLepton_IPCHI2","sumLJ_PT", 
@@ -57,7 +57,7 @@ y_prob_data = model.predict_proba(data_array)
 
 #création du mask
 #y_prob_data_transpose = np.transpose(y_prob_data)
-mask = y_prob_data_transpose[:,1] > 0.8  #Je ferais ca plutot comme ca et il mesempbe que c'est la deuxieme collone le signal
+mask = (y_prob_data[:,1] > 0.8)  #Je ferais ca plutot comme ca et il mesempbe que c'est la deuxieme collone le signal
 
 #création du fichier root
 dico_newtree = {}
