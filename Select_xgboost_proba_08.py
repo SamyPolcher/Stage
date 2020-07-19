@@ -56,8 +56,8 @@ y_prob_test  = model.predict_proba(X_test)
 y_prob_data = model.predict_proba(data_array)
 
 #création du mask
-y_prob_data_transpose = np.transpose(y_prob_data)
-mask = y_prob_data_transpose[0] > 0.8
+#y_prob_data_transpose = np.transpose(y_prob_data)
+mask = y_prob_data_transpose[:,1] > 0.8  #Je ferais ca plutot comme ca et il mesempbe que c'est la deuxieme collone le signal
 
 #création du fichier root
 dico_newtree = {}
